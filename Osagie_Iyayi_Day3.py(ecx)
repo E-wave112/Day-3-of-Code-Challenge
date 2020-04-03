@@ -1,0 +1,29 @@
+#Binary Search Algorithm
+from math import*
+print('Bonjour !')
+def bin_search(Array, Target, n):
+	'''
+	the function aims to find a target value from an array specifying it's interval between the middle value, either higher or lower
+	'''
+	medio = ceil(len(Array)/2)
+	high  = len(Array)
+	if len(Array) ==1:
+		if Target ==Array[0]:
+			return True
+		else:
+			return False
+		if Target ==Array:
+			return bin_search(Array, Target)
+		elif Target > Array:
+			Array = Array[medio:high]
+			return bin_search(Array, Target)
+		elif Target > Array:
+			Array = Array[:medio]
+			return bin_search(Array, Target )
+			
+n  = int(input('Enter list Cardinality :'))
+Array = list(map(int, input('Enter your list elements here :')))
+Array.sort()
+Target = int(input('Enter Target value :'))
+bin_search(Array, Target, n)
+print('Enchante !, Aurevoir')
